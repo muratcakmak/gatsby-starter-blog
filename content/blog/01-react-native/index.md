@@ -1,6 +1,7 @@
 ---
 title: React Native Cheatsheet
-date: "2019-03-11T21:12:03.284Z"
+date: "2019-03-10T21:12:03.284Z"
+description: Frequently Running Issues in React Native
 ---
 
 ## React Native
