@@ -1,4 +1,51 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Oguzhan Cakmak's Blog]]></title><description><![CDATA[Full Stack Software Engineer in San Francisco. React, React-Native, GraphQL, Node, and Golang.]]></description><link>https://oguzhan.netlify.com/</link><generator>RSS for Node</generator><lastBuildDate>Mon, 22 Apr 2019 18:07:46 GMT</lastBuildDate><item><title><![CDATA[Puppeteer Testing Example]]></title><link>https://oguzhan.netlify.com//js-testing/</link><guid isPermaLink="false">https://oguzhan.netlify.com//js-testing/</guid><pubDate>Sun, 21 Apr 2019 21:12:03 GMT</pubDate><content:encoded>&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; puppeteer &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;puppeteer&quot;&lt;/span&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Oguzhan Cakmak's Blog]]></title><description><![CDATA[Full Stack Software Engineer in San Francisco. React, React-Native, GraphQL, Node, and Golang.]]></description><link>https://oguzhan.netlify.com/</link><generator>RSS for Node</generator><lastBuildDate>Wed, 26 Jun 2019 14:14:48 GMT</lastBuildDate><item><title><![CDATA[Mysql notes to myself[WIP]]]></title><description><![CDATA[Mysql commands Upgrade Install current mysql version Start agent for current version of mysql (including on login) Install the different…]]></description><link>https://oguzhan.netlify.com//mysql/</link><guid isPermaLink="false">https://oguzhan.netlify.com//mysql/</guid><pubDate>Wed, 26 Jun 2019 06:00:03 GMT</pubDate><content:encoded>&lt;h1&gt;Mysql commands&lt;/h1&gt;
+&lt;h2&gt;Upgrade&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;mysql_upgrade
+mysql_upgrade --protocol&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;tcp -P 3306 --user&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;root --host&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;127.0.0.1 --skip-version-check --force -uroot -p&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Install current mysql version&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;brew &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; mysql&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Start agent for current version of mysql (including on login)&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;ln&lt;/span&gt; -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1&gt;Install the different version of mysql&lt;/h1&gt;
+&lt;h2&gt;Find older mysql versions&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;brew search mysql&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Install older mysql version&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;brew &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; homebrew/versions/mysql@5.7&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Start agent for older version of mysql (including on login)&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;ln&lt;/span&gt; -sfv /usr/local/opt/mysql@5.7./*.plist ~/Library/LaunchAgents
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql@5.7.plist&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Dump mysql&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;mysqldump --all-databases -uroot &lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt; dump.sql&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Use dump db&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;mysql -u username -p -h localhost DATA-BASE-NAME &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt; data.sql&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;mysql -u root -p
+create database mydb&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+use mydb&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;source&lt;/span&gt; db_backup.dump&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h1&gt;Uninstall MySql on a Mac OS X&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://community.jaspersoft.com/wiki/uninstall-mysql-mac-os-x&quot;&gt;Uninstall Mysql MacOS&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://thoughtbot.com/blog/starting-and-stopping-background-services-with-homebrew&quot;&gt;Stopping Background Services with Homebrew&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[NLP with Deep Learning[WIP]]]></title><description><![CDATA[Definitions SVM (Support Vector Machine) A Support Vector Machine (SVM) is a discriminative classifier formally defined by a separating…]]></description><link>https://oguzhan.netlify.com//nlp-notes/</link><guid isPermaLink="false">https://oguzhan.netlify.com//nlp-notes/</guid><pubDate>Mon, 17 Jun 2019 10:00:03 GMT</pubDate><content:encoded>&lt;h1&gt;Definitions&lt;/h1&gt;
+&lt;h2&gt;SVM (Support Vector Machine)&lt;/h2&gt;
+&lt;p&gt;A Support Vector Machine (SVM) is a discriminative classifier formally defined by a separating hyperplane. In other words, given labeled training data (supervised learning), the algorithm outputs an optimal hyperplane which categorizes new examples. In two dimentional space this hyperplane is a line dividing a plane in two parts where in each class lay in either side.&lt;/p&gt;
+&lt;h3&gt;Kernel&lt;/h3&gt;
+&lt;h3&gt;Regularization&lt;/h3&gt;
+&lt;p&gt;The Regularization parameter (often termed as C parameter in python’s sklearn library) tells the SVM optimization how much you want to avoid misclassifying each training example.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://medium.com/machine-learning-101/chapter-2-svm-support-vector-machine-theory-f0812effc72&quot;&gt;Resource&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Conditional Random Fields as Recurrent Neural Networks (Semantic Segmentation)&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://towardsdatascience.com/review-crf-rnn-conditional-random-fields-as-recurrent-neural-networks-semantic-segmentation-a11eb6e40c8c&quot;&gt;Resource&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Word Embedding&lt;/h3&gt;
+&lt;h3&gt;Word2Vec&lt;/h3&gt;
+&lt;p&gt;It is magic&lt;/p&gt;
+&lt;h3&gt;Precision and Recall&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Precisionrecall.svg/1280px-Precisionrecall.svg.png&quot;&gt;schema&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;F1 Score&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/F1_score&quot;&gt;https://en.wikipedia.org/wiki/F1_score&lt;/a&gt;&lt;/p&gt;
+&lt;h1&gt;Vocabulary&lt;/h1&gt;
+&lt;h2&gt;Syntax&lt;/h2&gt;
+&lt;p&gt;The way in which linguistic elements (such as words) are put together to form constituents (such as phrases or clauses)&lt;/p&gt;
+&lt;h2&gt;Semantic&lt;/h2&gt;
+&lt;p&gt;:of or relating to meaning in language&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Puppeteer Testing Example]]></title><link>https://oguzhan.netlify.com//js-testing/</link><guid isPermaLink="false">https://oguzhan.netlify.com//js-testing/</guid><pubDate>Sun, 21 Apr 2019 21:12:03 GMT</pubDate><content:encoded>&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; puppeteer &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;puppeteer&quot;&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; faker &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;faker&quot;&lt;/span&gt;
 
 &lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; User &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
@@ -269,6 +316,9 @@ console.dir(obj)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
   &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;span aria-hidden=&quot;true&quot; class=&quot;line-numbers-rows&quot; style=&quot;white-space: normal; width: auto; left: 0;&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;Flow&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre class=&quot;language-js&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// ignore next line&lt;/span&gt;
+&lt;span class=&quot;token comment&quot;&gt;// $FlowFixMe&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; supressedFlowError&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;Prettier&lt;/h2&gt;
 &lt;p&gt;Example &lt;code class=&quot;language-text&quot;&gt;.prettierrc&lt;/code&gt; setup&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;js&quot;&gt;&lt;pre style=&quot;counter-reset: linenumber 0&quot; class=&quot;language-js line-numbers&quot;&gt;&lt;code class=&quot;language-js&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
