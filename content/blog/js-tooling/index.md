@@ -28,7 +28,7 @@ console.dir(obj)
 
 Example `.eslintrc`
 
-```js
+```js{numberLines: true}
 {
   "extends": "eslint-config-airbnb",
   "parser": "babel-eslint",
@@ -90,11 +90,17 @@ Example `.eslintrc`
 
 ## Flow
 
+```js
+// ignore next line
+// $FlowFixMe
+const supressedFlowError;
+```
+
 ## Prettier
 
 Example `.prettierrc` setup
 
-```js
+```js{numberLines: true}
 {
   "useTabs": false,
   "printWidth": 72,
