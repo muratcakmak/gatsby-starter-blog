@@ -1,5 +1,5 @@
 ---
-title: Git notes for myself
+title: Git notes
 date: "2019-03-14T21:12:03.284Z"
 description: Personal notes on Git
 ---
@@ -99,6 +99,12 @@ git stash
 git stash list
 git stash pop
 git stash apply
+```
+
+Delete all the branches other than master
+
+```
+git branch | grep -v "master" | xargs git branch -D
 ```
 
 ### References
