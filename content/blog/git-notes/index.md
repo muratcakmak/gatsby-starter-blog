@@ -107,6 +107,16 @@ Delete all the branches other than master
 git branch | grep -v "master" | xargs git branch -D
 ```
 
+Keep the file as is in the master, exclude local changes from git
+
+```
+# To skip git
+git update-index --skip-worktree <file>
+
+# Revert
+git update-index --no-skip-worktree <file>
+```
+
 ### References
 
 - https://www.atlassian.com/git/tutorials/merging-vs-rebasing
