@@ -1,4 +1,29 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Oguzhan Cakmak's Blog]]></title><description><![CDATA[Full Stack Software Engineer in San Francisco. React, React-Native, GraphQL, Node, and Golang.]]></description><link>https://oguzhan.netlify.com/</link><generator>RSS for Node</generator><lastBuildDate>Thu, 27 Jun 2019 01:53:15 GMT</lastBuildDate><item><title><![CDATA[Mysql notes to myself[WIP]]]></title><description><![CDATA[Mysql commands Upgrade Install current mysql version Start agent for current version of mysql (including on login) Install the different…]]></description><link>https://oguzhan.netlify.com//mysql/</link><guid isPermaLink="false">https://oguzhan.netlify.com//mysql/</guid><pubDate>Wed, 26 Jun 2019 06:00:03 GMT</pubDate><content:encoded>&lt;h1&gt;Mysql commands&lt;/h1&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Oguzhan Cakmak's Blog]]></title><description><![CDATA[Full Stack Software Engineer in San Francisco. React, React-Native, GraphQL, Node, and Golang.]]></description><link>https://oguzhan.netlify.com/</link><generator>RSS for Node</generator><lastBuildDate>Wed, 24 Jul 2019 17:03:16 GMT</lastBuildDate><item><title><![CDATA[Productivity Tips for Developers]]></title><description><![CDATA[Productivity Recently, I have started to think about the limited time we have on earth and how we spend it. Most of us have to work everyday…]]></description><link>https://oguzhan.netlify.com//vs-code-vim/</link><guid isPermaLink="false">https://oguzhan.netlify.com//vs-code-vim/</guid><pubDate>Sun, 21 Jul 2019 17:12:03 GMT</pubDate><content:encoded>&lt;h1&gt;Productivity&lt;/h1&gt;
+&lt;p&gt;Recently, I have started to think about the limited time we have on earth and how we spend it. Most of us have to work everyday or get things done to feel fulfilled. Once we are in the flow of getting things done, it has a snowball effect.&lt;/p&gt;
+&lt;p&gt;I had a chance to look for the things that I took granted for year with different lens. This is a living document and I will update it by time.&lt;/p&gt;
+&lt;h2&gt;Vim&lt;/h2&gt;
+&lt;h3&gt;Basics&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://medium.com/@corrodedlotus/a-simple-vim-find-and-replace-guide-a17dab8f0d6f&quot;&gt;Search&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;Learning&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://vim-adventures.com/&quot;&gt;Vim Adventures&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.vimgolf.com/?source=post_page---------------------------&quot;&gt;Vim Golf&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;VSCode and Vim&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.barbarianmeetscoding.com/blog/2019/02/08/boost-your-coding-fu-with-vscode-and-vim&quot;&gt;https://www.barbarianmeetscoding.com/blog/2019/02/08/boost-your-coding-fu-with-vscode-and-vim&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://dev.to/kewah/vscode-as-a-vim-editor-e8o&quot;&gt;VSCode as a Vim editor&lt;/a&gt;
+&lt;a href=&quot;https://dev.to/vintharas/installing-vim-in-vscode-and-your-first-baby-steps-in-vim-2d61&quot;&gt;Installing Vim in VSCode and Your First Baby Steps in Vim&lt;/a&gt;
+&lt;a href=&quot;https://dev.to/karlredman/navigate-your-vscode-like-its-1999-the-vim-way-3632&quot;&gt;Vim like its 1999&lt;/a&gt;
+&lt;a href=&quot;https://dev.to/muhajirdev/vim-visual-studio-code-tips-tricks-with-video-gif-8on&quot;&gt;VIM &amp;#x26; Visual Studio Code Tips &amp;#x26; Tricks (With Video / GIF)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/VSCodeVim/Vim&quot;&gt;VSCodeVim&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;VSCode Specific Commands&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;gc5j toggle comment&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Repeat keys&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool true&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Google Chrome&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://blog.hubspot.com/sales/chrome-keyboard-shortcuts&quot;&gt;30 Chrome Shortcuts&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.makeuseof.com/tag/google-chrome-shortcuts-pdf/&quot;&gt;Google Chrome Shortcuts&lt;/a&gt;
+ ## Google Search&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Mysql notes to myself[WIP]]]></title><description><![CDATA[Mysql commands Upgrade Install current mysql version Start agent for current version of mysql (including on login) Install the different…]]></description><link>https://oguzhan.netlify.com//mysql/</link><guid isPermaLink="false">https://oguzhan.netlify.com//mysql/</guid><pubDate>Wed, 26 Jun 2019 06:00:03 GMT</pubDate><content:encoded>&lt;h1&gt;Mysql commands&lt;/h1&gt;
 &lt;h2&gt;Upgrade&lt;/h2&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;mysql_upgrade
 mysql_upgrade --protocol&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;tcp -P 3306 --user&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;root --host&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;127.0.0.1 --skip-version-check --force -uroot -p&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -196,6 +221,12 @@ git stash pop
 git stash apply&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Delete all the branches other than master&lt;/p&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;git branch | grep -v &amp;quot;master&amp;quot; | xargs git branch -D&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Keep the file as is in the master, exclude local changes from git&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;# To skip git
+git update-index --skip-worktree &amp;lt;file&amp;gt;
+
+# Revert
+git update-index --no-skip-worktree &amp;lt;file&amp;gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;References&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.atlassian.com/git/tutorials/merging-vs-rebasing&quot;&gt;https://www.atlassian.com/git/tutorials/merging-vs-rebasing&lt;/a&gt;&lt;/li&gt;
