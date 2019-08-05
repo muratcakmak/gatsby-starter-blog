@@ -117,6 +117,15 @@ git update-index --skip-worktree <file>
 git update-index --no-skip-worktree <file>
 ```
 
+```
+# To find commits of the author
+git log --author=Oguzhan
+
+# Check commit with message
+git show --color --pretty=format:%b c2b88ed806fb5728a376bddab0c0e6d13d1ee15a
+
+```
+
 ### References
 
 - https://www.atlassian.com/git/tutorials/merging-vs-rebasing
