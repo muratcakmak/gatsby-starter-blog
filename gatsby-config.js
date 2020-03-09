@@ -6,14 +6,14 @@ module.exports = {
     siteUrl: `https://oguzhan.netlify.com/`,
     social: {
       twitter: `omc345`,
-      instagram: `oghmuch`,
+      instagram: `omc345`,
     },
   },
   plugins: [
     {
       resolve: `gatsby-source-instagram`,
       options: {
-        username: `oghmuch`,
+        username: `omc345`,
       },
     },
     {
