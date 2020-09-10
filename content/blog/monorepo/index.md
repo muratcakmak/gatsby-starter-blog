@@ -1,7 +1,7 @@
 ---
-title: React & React Native Monorepo Learnings
+title: React & React Native Monorepo Bookmarks
 date: "2020-03-01T21:12:03.284Z"
-description: Learning and Notes while working on Project Monorepo
+description: Bookmarks accumulated while working on Project Monorepo
 tags:
   [
     "react native for web",
@@ -13,7 +13,7 @@ tags:
   ]
 ---
 
-## TS Learnings
+## TS Resources
 
 [https://www.typescriptlang.org/docs/handbook/basic-types.html](https://www.typescriptlang.org/docs/handbook/basic-types.html)
 
