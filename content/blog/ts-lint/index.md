@@ -28,7 +28,7 @@ TSLint will hopefully be deprecated next year (2021). Till then it is the best l
 
 1. Press `CMD + ,` or click `Code`, `Preferences` and `Settings`
 
-2. Click the icon below ![gatsby tutorial](../../assets/vscode-settings.png)
+2. Click the icon below ![vscode](https://i.ibb.co/Jp3d3w0/6742274-F-5577-4-EB5-B00-F-7-C14-CA445-DBA.jpg)
 
 3. Add `"tslint.autoFixOnSave": true` to settings.json file
 
