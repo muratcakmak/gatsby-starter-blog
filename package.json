@@ -39,7 +39,8 @@
     "typography-theme-wordpress-2016": "^0.16.19"
   },
   "devDependencies": {
-    "prettier": "^1.16.4"
+    "prettier": "^1.16.4",
+    "@babel/compat-data": "^7.9.0"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
   "keywords": [
