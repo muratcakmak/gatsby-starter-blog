@@ -11,7 +11,7 @@ Interactive rebasing
 git rebase -i master
 The golden rule of git rebase is to never use it on public branches.
 So, before you run git rebase, always ask yourself, “Is anyone else looking at this branch?” If the answer is yes, take your hands off the keyboard and start thinking about a non-destructive way to make your changes (e.g., the git revert command)
-gitk git bisect
+gitkgit bisect
 
 .gitignore
 Git sees every file in your working copy as one of three things.
