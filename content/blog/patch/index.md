@@ -29,6 +29,6 @@ According to its documentation:
 2. Make your changes
 3. Run `npx patch-package package-name`
 4. Run `yarn install patch-package -D`
-5. Add "postinstall": "patch-package" to your `scripts` key in `package.json` file
+5. Add `"postinstall": "patch-package"` to your `scripts` key in `package.json` file
 
 Step 4 and Step5 guarantee that your `node_modules` will be overwritten by your patch each time you `yarn`.
