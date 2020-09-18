@@ -19,7 +19,9 @@ The solution is here: patch-package
 
 ### patch-package
 
-According to its documentation `patch-package lets app authors instantly make and keep fixes to npm dependencies. It's a vital band-aid for those of us living on the bleeding edge.`
+According to its documentation:
+
+> patch-package lets app authors instantly make and keep fixes to npm dependencies. It's a vital band-aid for those of us living on the bleeding edge.
 
 ### How does it work
 
