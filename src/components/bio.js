@@ -39,7 +39,7 @@ function Bio() {
             />
             <p>
               Written by <strong>{author}</strong> who lives and works in San
-              Francisco building useful things. Follow him on{` `}
+              Francisco and remote building mobile applications, web applications, and backend. Follow him on{` `}
               <a href={`https://twitter.com/${social.twitter}`}>Twitter</a>
               {` `}or{` `}
               <a href={`https://instagram.com/${social.instagram}`}>
