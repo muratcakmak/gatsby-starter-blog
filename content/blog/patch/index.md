@@ -2,6 +2,7 @@
 title: Pactching npm packages for good
 date: "2020-09-17T21:12:03.284Z"
 description: React Native ecosystem have many packages not frequently updated and I will work through how to bandaid those packages
+tags: ["react-native", "javascript", "patching", "patch-package", "vscode", "microsoft"]
 ---
 
 ## Introduction
