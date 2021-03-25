@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Oguzhan Cakmak's Blog`,
+    title: `OMC's Blog`,
     author: `Oguzhan Cakmak`,
     description: `Full Stack Software Engineer in San Francisco. React, React-Native, GraphQL, Node, and Golang.`,
     siteUrl: `https://oguzhan.netlify.com/`,
