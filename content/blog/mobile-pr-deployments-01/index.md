@@ -92,11 +92,11 @@ I created three Github actions.
 
 - `mobile-pr-preview-create.yml` creates the bucket. I can be seen on your `[appcenter.ms](http://appcenter.ms)` dashboard.
 
-![blog-02](https://i.postimg.cc/9F7DHXtm/blog-01.jpg)
+  ![blog-01](https://i.ibb.co/h9rqVLY/blog-01.jpg)
 
 - `mobile-pr-preview-update.yml` runs when push. It kicks off a deployment on Appcenter
 
-![blog-02](https://i.postimg.cc/DwQmmCMR/blog-02.jpg)
+![blog-02](https://i.ibb.co/3TxZLSL/blog-02.jpg)
 
 - `mobile-pr-preview-delete.yml` runs when PR is closed (either merged or closed). It removes the bucket from Appcenter.
 
