@@ -50,6 +50,9 @@ class BlogIndex extends React.Component {
             </div>
           )
         })}
+        <a href="https://twitter.com/omc345" rel="me">
+          twitter.com/omc345
+        </a>
       </Layout>
     )
   }
