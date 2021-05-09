@@ -4,11 +4,9 @@ date: "2021-05-05T21:12:03.284Z"
 description: Let's bring convenient preview PR deployments to iOS side of React Native Projects (Android is doable too)
 ---
 
-# Pretty Opinionated Introduction to React Native for React Developers
-
 ## What is Preview Deployments
 
-PR(Pull request) Preview Deployments are handy for developer and the shareholder to review the work before kicking off the deployment
+PR(Pull request) Preview Deployments are handy for the developer and the shareholder to review the work before kicking off the deployment
 
 Benefits:
 
@@ -18,7 +16,7 @@ Benefits:
 
 Every push to a feature branch provides a preview URL so you can accomplish the goals above.
 
-Unfortunately, preview deployments are not that straightforward in bare React Native projects. I couldn't find any third party service to accomplish this so I get my hands dirty and came up with my own solutions.
+Unfortunately, preview deployments are not that straightforward in bare React Native projects. I couldn't find any third-party service to achieve this so I get my hands dirty and came up with my solutions.
 
 ## Before we start
 
@@ -92,15 +90,15 @@ on:
 
 I created three Github actions.
 
--`mobile-pr-preview-create.yml` creates the bucket. I can be seen on your `[appcenter.ms](http://appcenter.ms)` dashboard.
+- `mobile-pr-preview-create.yml` creates the bucket. I can be seen on your `[appcenter.ms](http://appcenter.ms)` dashboard.
 
 ![blog-02](https://i.postimg.cc/9F7DHXtm/blog-01.jpg)
 
--`mobile-pr-preview-update.yml` runs when push. It kicks off a deployment on Appcenter
+- `mobile-pr-preview-update.yml` runs when push. It kicks off a deployment on Appcenter
 
 ![blog-02](https://i.postimg.cc/DwQmmCMR/blog-02.jpg)
 
--`mobile-pr-preview-delete.yml` runs when PR is closed (either merged or closed). It removes the bucket from Appcenter.
+- `mobile-pr-preview-delete.yml` runs when PR is closed (either merged or closed). It removes the bucket from Appcenter.
 
 ## Integrating Codepush commands into Github actions
 
@@ -137,7 +135,7 @@ jobs:
           appcenter codepush deployment add ${GIT_BRANCH_NAME} -a OrganizationName/ApplicationName
 ```
 
-And then we'll create a buck with the command below:
+And then we'll create a bucket with the command below:
 
 ```bash
 appcenter codepush deployment add $branch-name -a OrganizationName/ApplicationName
@@ -145,7 +143,7 @@ appcenter codepush deployment add $branch-name -a OrganizationName/ApplicationNa
 
 Bucket creation is important since it is the place where we'll push updates so it should run when pull request created. It's fortunate that Github action `on` property which is kinda lifecycle method.
 
-_Important_:The unfortunate thing is it doesn't work if pull request has merge conflicts. I resolved the merge conflicts and continue to work on code push commands.
+_Important_: The unfortunate thing is it doesn't work if pull request has merge conflicts. I resolved the merge conflicts and continue to work on code push commands.
 
 We want to update the bucket when there is a change so we should kick off a deployment on code push. Because bucket is created this will not error out.
 
@@ -159,4 +157,4 @@ At the last step, we want to remove the bucket so it won't appear on the develop
 yes Y | appcenter codepush deployment remove ${GIT_BRANCH_NAME} -a OrganizationName/ApplicationName
 ```
 
-Now, it is good time to wire them up completely.
+We have pretty solid ground for preview deployments so let's wire them up on the frontend and see how things going on.

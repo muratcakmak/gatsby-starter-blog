@@ -4,9 +4,11 @@ date: "2021-05-05T21:12:03.284Z"
 description: Let's bring convenient preview PR deployments to iOS side of React Native Projects (Android is doable too)
 ---
 
+# Pretty Opinionated Introduction to React Native for React Developers
+
 ## What is Preview Deployments
 
-PR(Pull request) Preview Deployments are handy for the developer and the shareholder to review the work before kicking off the deployment
+PR(Pull request) Preview Deployments are handy for developer and the shareholder to review the work before kicking off the deployment
 
 Benefits:
 
@@ -16,7 +18,7 @@ Benefits:
 
 Every push to a feature branch provides a preview URL so you can accomplish the goals above.
 
-Unfortunately, preview deployments are not that straightforward in bare React Native projects. I couldn't find any third-party service to achieve this so I get my hands dirty and came up with my solutions.
+Unfortunately, preview deployments are not that straightforward in bare React Native projects. I couldn't find any third party service to accomplish this so I get my hands dirty and came up with my own solutions.
 
 ## Before we start
 
@@ -90,15 +92,15 @@ on:
 
 I created three Github actions.
 
-- `mobile-pr-preview-create.yml` creates the bucket. I can be seen on your `[appcenter.ms](http://appcenter.ms)` dashboard.
+-`mobile-pr-preview-create.yml` creates the bucket. I can be seen on your `[appcenter.ms](http://appcenter.ms)` dashboard.
 
 ![blog-02](https://i.postimg.cc/9F7DHXtm/blog-01.jpg)
 
-- `mobile-pr-preview-update.yml` runs when push. It kicks off a deployment on Appcenter
+-`mobile-pr-preview-update.yml` runs when push. It kicks off a deployment on Appcenter
 
 ![blog-02](https://i.postimg.cc/DwQmmCMR/blog-02.jpg)
 
-- `mobile-pr-preview-delete.yml` runs when PR is closed (either merged or closed). It removes the bucket from Appcenter.
+-`mobile-pr-preview-delete.yml` runs when PR is closed (either merged or closed). It removes the bucket from Appcenter.
 
 ## Integrating Codepush commands into Github actions
 
