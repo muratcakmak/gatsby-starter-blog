@@ -20,7 +20,7 @@ export default function WebMentions({ url }) {
   const [page, setPage] = useState(0)
   const [links, setLinks] = useState([])
   const [loading, setLoading] = useState(true)
-  const twitterHref = `https://twitter.com/intent/tweet/?text=Great%20post%20by%20@jkup%20${url}`
+  const twitterHref = `https://twitter.com/intent/tweet/?text=Great%20post%20by%20@omc345%20${url}`
 
   useEffect(() => {
     async function loadPage() {
