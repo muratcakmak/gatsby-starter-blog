@@ -17,6 +17,7 @@
     "gatsby-plugin-react-helmet": "^3.0.9",
     "gatsby-plugin-sharp": "^2.0.27",
     "gatsby-plugin-typography": "^2.2.9",
+    "gatsby-plugin-webmention": "^0.2.0",
     "gatsby-remark-copy-linked-files": "^2.0.10",
     "gatsby-remark-images": "^2.0.6",
     "gatsby-remark-prismjs": "^3.2.5",
@@ -39,8 +40,8 @@
     "typography-theme-wordpress-2016": "^0.16.19"
   },
   "devDependencies": {
-    "prettier": "^1.16.4",
-    "@babel/compat-data": "^7.9.0"
+    "@babel/compat-data": "^7.9.0",
+    "prettier": "^1.16.4"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
   "keywords": [

@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import WebMentions from "../utils/webmentions.js"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -36,7 +37,7 @@ class BlogPostTemplate extends React.Component {
           }}
         />
         <Bio />
-
+        <WebMentions url={location.href} />
         <ul
           style={{
             display: `flex`,

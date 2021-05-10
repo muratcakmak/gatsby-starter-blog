@@ -11,6 +11,24 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-webmention`,
+      options: {
+        username: "www.omc345.com", // webmention.io username
+        identity: {
+          // you need to specify at least one of the identities
+          // to be able to log in webmention.io
+          github: "omc345",
+          twitter: "omc345", // no @
+        },
+        mentions: true,
+        pingbacks: false,
+        forwardPingbacksAsWebmentions: "",
+        domain: "www.omc345.com",
+        fetchLimit: 10000, // number of webmentions to fetch
+        token: process.env.WEBMENTIONS_TOKEN,
+      },
+    },
+    {
       resolve: `gatsby-source-instagram`,
       options: {
         username: `omc345`,
