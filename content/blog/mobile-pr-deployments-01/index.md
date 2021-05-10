@@ -36,7 +36,7 @@ Your project should have the following conditions:
 - Codepush setup
 - Hosted on GitHub
 
-In high level, we'll use github to host our codebase. We'll leverage codepush's API to accomplish our goal.
+In high level, we'll use GitHub to host our codebase. We'll leverage codepush's API to accomplish our goal.
 
 I will not go into the details of how Codepush setup. Feel free to follow along the official documentation. [https://docs.microsoft.com/en-us/appcenter/distribution/codepush/rn-get-started](https://docs.microsoft.com/en-us/appcenter/distribution/codepush/rn-get-started)
 
@@ -54,23 +54,23 @@ We'll employ pretty similar strategy:
 
 1. Develop the feature on your local
 2. Create a PR on your repository
-3. A github action will kick off a workflow to create a new bucket on codepush
+3. A GitHub action will kick off a workflow to create a new bucket on codepush
 4. Then the very same action will kick off a deployment on Codepush
 5. If Codepush deployment succeeded, it post a comment with a QR code which has a deep link to the changes on the branch
-6. Another Github action kicks off code push deployment with each PR update and repeats the step 4 and 5 again and again
-7. The third Github action will remove the codepush bucket when PR is closed (either merged or closed manually)
+6. Another GitHub action kicks off code push deployment with each PR update and repeats the step 4 and 5 again and again
+7. The third GitHub action will remove the codepush bucket when PR is closed (either merged or closed manually)
 
-## Github actions
+## GitHub actions
 
 ### Life cycle of a PR
 
-I want to run github actions for codepush command on the occurence of three events.
+I want to run GitHub actions for codepush command on the occurence of three events.
 
 1. Pull request is created
 2. Push changes to the existing pull request
 3. Pull request closed (either merge to the master or closed manually for some reason)
 
-Fortunately, Github projects such lifecycle events. However, the document isn't that straightforward to navigate.
+Fortunately, GitHub projects such lifecycle events. However, the document isn't that straightforward to navigate.
 
 1. ```yaml
    on:
@@ -88,7 +88,7 @@ Fortunately, Github projects such lifecycle events. However, the document isn't 
        types: [closed]
    ```
 
-I created three Github actions.
+I created three GitHub actions.
 
 - `mobile-pr-preview-create.yml` creates the bucket. I can be seen on your `[appcenter.ms](http://appcenter.ms)` dashboard.
 
@@ -100,11 +100,11 @@ I created three Github actions.
 
 - `mobile-pr-preview-delete.yml` runs when PR is closed (either merged or closed). It removes the bucket from Appcenter.
 
-### Codepush integration to Github Actions
+### Codepush integration to GitHub Actions
 
-We'll use `act`. `act` is a cool project that written in Go and it allows you to run Github Actions locally.
+We'll use `act`. `act` is a cool project that written in Go and it allows you to run GitHub Actions locally.
 
-In the first, we should find a unique name for the bucket. I go with branch name. We leverage a Github action already created for getting branch name as shown below
+In the first, we should find a unique name for the bucket. I go with branch name. We leverage a GitHub action already created for getting branch name as shown below
 
 ```yaml
 name: Create Mobile PR Preview Bucket
@@ -141,7 +141,7 @@ And then we'll create a bucket with the command below:
 appcenter codepush deployment add $branch-name -a OrganizationName/ApplicationName
 ```
 
-Bucket creation is important since it is the place where we'll push updates so it should run when pull request created. It's fortunate that Github action `on` property which is kinda lifecycle method.
+Bucket creation is important since it is the place where we'll push updates so it should run when pull request created. It's fortunate that GitHub action `on` property which is kinda lifecycle method.
 
 _important_: The unfortunate thing is it doesn't work if pull request has merge conflicts. I resolved the merge conflicts and continue to work on code push commands.
 
