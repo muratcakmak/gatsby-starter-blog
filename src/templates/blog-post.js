@@ -37,7 +37,7 @@ class BlogPostTemplate extends React.Component {
           }}
         />
         <Bio />
-        <WebMentions url={location.href} />
+        <WebMentions url={this.props.location.href} />
         <ul
           style={{
             display: `flex`,
