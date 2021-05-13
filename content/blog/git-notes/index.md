@@ -2,6 +2,13 @@
 title: Git notes
 date: "2019-03-14T21:12:03.284Z"
 description: Personal notes on Git
+tags:
+  [
+    "git",
+    "history",
+    "github",
+    "frontend",
+  ]
 ---
 
 ### Merge and Rebase:
