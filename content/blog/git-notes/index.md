@@ -126,6 +126,12 @@ git show --color --pretty=format:%b c2b88ed806fb5728a376bddab0c0e6d13d1ee15a
 
 ```
 
+List all the commit from a specific commit on without commit hash
+
+```
+git log --pretty=oneline  commit-hash..HEAD --format="$ad- %s [%an]"
+```
+
 ### References
 
 - https://www.atlassian.com/git/tutorials/merging-vs-rebasing
