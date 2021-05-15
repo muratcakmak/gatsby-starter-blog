@@ -1,4 +1,234 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Oguzhan Cakmak's Blog]]></title><description><![CDATA[Full Stack Software Engineer in San Francisco. React, React-Native, GraphQL, Node, and Golang.]]></description><link>https://oguzhan.netlify.com</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 11 Sep 2020 15:21:50 GMT</lastBuildDate><item><title><![CDATA[VSCode and TSLint Setup]]></title><description><![CDATA[TLDR; TSLint will hopefully be deprecated next year (2021). Till then it is the best linter option for Typescript project and VSCode should…]]></description><link>https://oguzhan.netlify.com/ts-lint/</link><guid isPermaLink="false">https://oguzhan.netlify.com/ts-lint/</guid><pubDate>Sat, 11 Jul 2020 21:12:03 GMT</pubDate><content:encoded>&lt;h2&gt;TLDR;&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[OMC's Blog]]></title><description><![CDATA[Full Stack Software Engineer in San Francisco. React, React-Native, GraphQL, Node, and Golang.]]></description><link>https://oguzhan.netlify.com</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 15 May 2021 22:21:06 GMT</lastBuildDate><item><title><![CDATA[Preview PR Deployments for React Native Projects]]></title><description><![CDATA[Application side Appcenter has a documented API which I thought we could leverage from the application. The idea is simple. We'll run get…]]></description><link>https://oguzhan.netlify.com/mobile-pr-deployments-02/</link><guid isPermaLink="false">https://oguzhan.netlify.com/mobile-pr-deployments-02/</guid><pubDate>Wed, 05 May 2021 21:12:03 GMT</pubDate><content:encoded>&lt;h1&gt;Application side&lt;/h1&gt;
+&lt;p&gt;Appcenter has a documented API which I thought we could leverage from the application. The idea is simple. We&apos;ll run get request to appcenter api to fetch the list of available deployments and list them in a list view. Once user clicks a deployment, we&apos;ll run &lt;code class=&quot;language-text&quot;&gt;codepush.sync&lt;/code&gt; to download an install the deployment. The app will restart and we&apos;ll see our changes.&lt;/p&gt;
+&lt;h3&gt;Appcenter API&lt;/h3&gt;
+&lt;p&gt;A fetch request against &lt;code class=&quot;language-text&quot;&gt;[https://openapi.appcenter.ms/#/codepush/codePushDeployments_list](https://openapi.appcenter.ms/#/codepush/codePushDeployments_list)&lt;/code&gt; required for listing available deployments. Available endpoint for Appcenter is listed on &lt;a href=&quot;https://openapi.appcenter.ms/&quot;&gt;https://openapi.appcenter.ms/&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Even though it is a well-documented API, it was a little bit struggle at first. After I found what I was looking for, it got way straightforward. Openapi has approachable UI which let&apos;s you run curl command from browser so the parameters are easy to access.&lt;/p&gt;
+&lt;p&gt;After getting my hands dirty with API, I went ahead and integrate the endpoint on the frontend. The frontend code is something similar to this.&lt;/p&gt;
+&lt;h2&gt;Frontend Code&lt;/h2&gt;
+&lt;p&gt;I decided to build a dedicated developer screen which contains all available updates.&lt;/p&gt;
+&lt;h2&gt;Deep Linking&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Setting up deep linking on iOS is a solved problem, you can follow one of the guides here. &lt;a href=&quot;https://reactnavigation.org/docs/deep-linking/&quot;&gt;https://reactnavigation.org/docs/deep-linking/&lt;/a&gt; and &lt;a href=&quot;https://reactnavigation.org/docs/configuring-links&quot;&gt;https://reactnavigation.org/docs/configuring-links&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;More on Github Actions&lt;/h2&gt;
+&lt;h2&gt;Creating QR Links&lt;/h2&gt;
+&lt;p&gt;Creating QR Links is way easier than I thought it would has been.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Preview PR Deployments for React Native Projects]]></title><description><![CDATA[What is Preview Deployments PR(Pull request) Preview Deployments are handy for the developer and the shareholder to review the work before…]]></description><link>https://oguzhan.netlify.com/mobile-pr-deployments-01/</link><guid isPermaLink="false">https://oguzhan.netlify.com/mobile-pr-deployments-01/</guid><pubDate>Wed, 05 May 2021 21:12:03 GMT</pubDate><content:encoded>&lt;h2&gt;What is Preview Deployments&lt;/h2&gt;
+&lt;p&gt;PR(Pull request) Preview Deployments are handy for the developer and the shareholder to review the work before kicking off the deployment&lt;/p&gt;
+&lt;p&gt;Benefits:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Previewing the changes in the isolation&lt;/li&gt;
+&lt;li&gt;Sharing the changes with the stakeholders (QA, Product, etc) helps to catch some details before they got deployed&lt;/li&gt;
+&lt;li&gt;Seamless iteration&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Every push to a feature branch provides a preview URL so you can accomplish the goals above.&lt;/p&gt;
+&lt;p&gt;Unfortunately, preview deployments are not that straightforward in bare React Native projects. I couldn&apos;t find any third-party service to achieve this so I get my hands dirty and came up with my solutions.&lt;/p&gt;
+&lt;h2&gt;Before we start&lt;/h2&gt;
+&lt;p&gt;Your project should have the following conditions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;A bare React Native project&lt;/li&gt;
+&lt;li&gt;Codepush setup&lt;/li&gt;
+&lt;li&gt;Hosted on GitHub&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In high level, we&apos;ll use GitHub to host our codebase. We&apos;ll leverage codepush&apos;s API to accomplish our goal.&lt;/p&gt;
+&lt;p&gt;I will not go into the details of how Codepush setup. Feel free to follow along the official documentation. &lt;a href=&quot;https://docs.microsoft.com/en-us/appcenter/distribution/codepush/rn-get-started&quot;&gt;https://docs.microsoft.com/en-us/appcenter/distribution/codepush/rn-get-started&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Strategy&lt;/h2&gt;
+&lt;p&gt;Preview deployments are pretty much available for web projects. Let&apos;s observe how it is accomplished:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Develop the feature on your local&lt;/li&gt;
+&lt;li&gt;Create a PR on your repository&lt;/li&gt;
+&lt;li&gt;A third party service (Vercel/Netlify) kicks off a deployment with your recent changes&lt;/li&gt;
+&lt;li&gt;The third party service of your choice post a comment back to your PR with the preview link&lt;/li&gt;
+&lt;li&gt;You&apos;ll happily share the link with stakeholders&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;We&apos;ll employ pretty similar strategy:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Develop the feature on your local&lt;/li&gt;
+&lt;li&gt;Create a PR on your repository&lt;/li&gt;
+&lt;li&gt;A GitHub action will kick off a workflow to create a new bucket on codepush&lt;/li&gt;
+&lt;li&gt;Then the very same action will kick off a deployment on Codepush&lt;/li&gt;
+&lt;li&gt;If Codepush deployment succeeded, it post a comment with a QR code which has a deep link to the changes on the branch&lt;/li&gt;
+&lt;li&gt;Another GitHub action kicks off code push deployment with each PR update and repeats the step 4 and 5 again and again&lt;/li&gt;
+&lt;li&gt;The third GitHub action will remove the codepush bucket when PR is closed (either merged or closed manually)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;GitHub actions&lt;/h2&gt;
+&lt;h3&gt;Life cycle of a PR&lt;/h3&gt;
+&lt;p&gt;I want to run GitHub actions for codepush command on the occurence of three events.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Pull request is created&lt;/li&gt;
+&lt;li&gt;Push changes to the existing pull request&lt;/li&gt;
+&lt;li&gt;Pull request closed (either merge to the master or closed manually for some reason)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Fortunately, GitHub projects such lifecycle events. However, the document isn&apos;t that straightforward to navigate.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yaml&quot;&gt;&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token key atrule&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+ &lt;span class=&quot;token key atrule&quot;&gt;pull_request&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+   &lt;span class=&quot;token key atrule&quot;&gt;types&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;opened&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yaml&quot;&gt;&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token key atrule&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; push&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yaml&quot;&gt;&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token key atrule&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+ &lt;span class=&quot;token key atrule&quot;&gt;pull_request&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+   &lt;span class=&quot;token key atrule&quot;&gt;types&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;closed&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;I created three GitHub actions.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code class=&quot;language-text&quot;&gt;mobile-pr-preview-create.yml&lt;/code&gt; creates the bucket. I can be seen on your &lt;code class=&quot;language-text&quot;&gt;[appcenter.ms](http://appcenter.ms)&lt;/code&gt; dashboard.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.ibb.co/h9rqVLY/blog-01.jpg&quot; alt=&quot;blog-01&quot;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;mobile-pr-preview-update.yml&lt;/code&gt; runs when push. It kicks off a deployment on Appcenter&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.ibb.co/3TxZLSL/blog-02.jpg&quot; alt=&quot;blog-02&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;mobile-pr-preview-delete.yml&lt;/code&gt; runs when PR is closed (either merged or closed). It removes the bucket from Appcenter.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Codepush integration to GitHub Actions&lt;/h3&gt;
+&lt;p&gt;We&apos;ll use &lt;code class=&quot;language-text&quot;&gt;act&lt;/code&gt;. &lt;code class=&quot;language-text&quot;&gt;act&lt;/code&gt; is a cool project that written in Go and it allows you to run GitHub Actions locally.&lt;/p&gt;
+&lt;p&gt;In the first, we should find a unique name for the bucket. I go with branch name. We leverage a GitHub action already created for getting branch name as shown below&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yaml&quot;&gt;&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Create Mobile PR Preview Bucket
+
+&lt;span class=&quot;token key atrule&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;pull_request&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;types&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;opened&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;token key atrule&quot;&gt;jobs&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;mobile-pr-preview-create-bucket&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;runs-on&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; ubuntu&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;latest
+    &lt;span class=&quot;token key atrule&quot;&gt;steps&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;uses&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; actions/checkout@v2
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Git branch name
+        &lt;span class=&quot;token key atrule&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; git&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;branch&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;name
+        &lt;span class=&quot;token key atrule&quot;&gt;uses&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; EthanSK/git&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;branch&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;name&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;action@v1
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Echo the branch name
+        &lt;span class=&quot;token key atrule&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; echo &quot;Branch name $&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;GIT_BRANCH_NAME&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&quot;
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Download appcenter (codepush)
+        &lt;span class=&quot;token key atrule&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; sudo npm install &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;g appcenter&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;cli
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; List appcenter version
+        &lt;span class=&quot;token key atrule&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; appcenter &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;v
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Login appcenter
+        &lt;span class=&quot;token key atrule&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; appcenter login &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;token $&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.CODEPUSH_TOKEN &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+      &lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Create bucket on appcenter and deploy to appcenter &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;iOS&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;token key atrule&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;token scalar string&quot;&gt;
+          cd packages/mobile
+          appcenter codepush deployment add ${GIT_BRANCH_NAME} -a OrganizationName/ApplicationName&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And then we&apos;ll create a bucket with the command below:&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;appcenter codepush deployment &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;token variable&quot;&gt;$branch&lt;/span&gt;-name -a OrganizationName/ApplicationName&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Bucket creation is important since it is the place where we&apos;ll push updates so it should run when pull request created. It&apos;s fortunate that GitHub action &lt;code class=&quot;language-text&quot;&gt;on&lt;/code&gt; property which is kinda lifecycle method.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;important&lt;/em&gt;: The unfortunate thing is it doesn&apos;t work if pull request has merge conflicts. I resolved the merge conflicts and continue to work on code push commands.&lt;/p&gt;
+&lt;p&gt;We want to update the bucket when there is a change so we should kick off a deployment on code push. Because bucket is created this will not error out.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;appcenter codepush release-react -a &lt;span class=&quot;token variable&quot;&gt;$ApplicationName&lt;/span&gt; -d &lt;span class=&quot;token variable&quot;&gt;${GIT_BRANCH_NAME}&lt;/span&gt; -e ./index.js -p ./ios/applicationName/Info.plist -t &lt;span class=&quot;token variable&quot;&gt;&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;cat&lt;/span&gt; package.json &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; jq -r .version&lt;span class=&quot;token variable&quot;&gt;`&lt;/span&gt;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; postcodePushIos &lt;span class=&quot;token operator&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;token builtin class-name&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;&quot;Codepush iOS Update Failed.&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;At the last step, we want to remove the bucket so it won&apos;t appear on the developer menu. Deployment removal require a respond to the prompt so I added yes in front of it.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;yes&lt;/span&gt; Y &lt;span class=&quot;token operator&quot;&gt;|&lt;/span&gt; appcenter codepush deployment remove &lt;span class=&quot;token variable&quot;&gt;${GIT_BRANCH_NAME}&lt;/span&gt; -a OrganizationName/ApplicationName&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;A little more on Update Bucket action&lt;/h3&gt;
+&lt;p&gt;After performing the deployment on update, we gotta run following steps.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;yaml&quot;&gt;&lt;pre class=&quot;language-yaml&quot;&gt;&lt;code class=&quot;language-yaml&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Get CodePush Deployment Key // 1
+  &lt;span class=&quot;token key atrule&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; getCodepushDeploymentKey
+  &lt;span class=&quot;token key atrule&quot;&gt;uses&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; satak/webrequest&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;action@master
+  &lt;span class=&quot;token key atrule&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; https&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;//api.appcenter.ms/v0.1/apps/OrganizationName/ApplicationName/deployments/$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; env.GIT_BRANCH_NAME &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; GET
+    &lt;span class=&quot;token key atrule&quot;&gt;headers&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;{&quot;X-API-Token&quot;: &quot;${{ secrets.CODEPUSH_TOKEN }}&quot;}&apos;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;uses&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; r26d/jq&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;action@master // 2
+&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Output
+  &lt;span class=&quot;token key atrule&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;token scalar string&quot;&gt;
+    deployment_key=$(echo &apos;${{ steps.getCodepushDeploymentKey.outputs.output }}&apos; | jq -r &apos;.data.key&apos;&quot;)
+    echo &quot;DEPLOYMENT_KEY=${deployment_key}&quot; &gt;&gt;$GITHUB_ENV&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Test the output
+  &lt;span class=&quot;token key atrule&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;token scalar string&quot;&gt;
+    echo ${{ env.DEPLOYMENT_KEY }}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;token key atrule&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; Create QR Code and comment // 3
+  &lt;span class=&quot;token key atrule&quot;&gt;uses&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; mshick/add&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;pr&lt;span class=&quot;token punctuation&quot;&gt;-&lt;/span&gt;comment@v1
+  &lt;span class=&quot;token key atrule&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;GITHUB_TOKEN&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; $&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; secrets.GITHUB_TOKEN &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token key atrule&quot;&gt;with&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token key atrule&quot;&gt;message&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;token scalar string&quot;&gt;
+      ## Mobile PR Preview&lt;/span&gt;
+
+      &lt;span class=&quot;token tag&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;Image of QR Code&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;(https&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;//quickchart.io/qr&lt;span class=&quot;token punctuation&quot;&gt;?&lt;/span&gt;text=applicationName&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;//developer/$&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; env.DEPLOYMENT_KEY &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token important&quot;&gt;&amp;amp;size=350)&lt;/span&gt;
+
+    &lt;span class=&quot;token key atrule&quot;&gt;allow-repeats&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean important&quot;&gt;false&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Let&apos;s walk them through.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;We&apos;ll fetch the deployments for a bucket which has the same name with the current branch. It returns JSON payload with many attributes that we are not interested in.&lt;/li&gt;
+&lt;li&gt;The JSON payload has the &lt;code class=&quot;language-text&quot;&gt;key&lt;/code&gt; attribute which is what we&apos;ll use later on the client side to sync.&lt;/li&gt;
+&lt;li&gt;We&apos;ll post a PR comment with the QR code which includes &lt;code class=&quot;language-text&quot;&gt;key&lt;/code&gt; attribute to pass it along the client&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;Summary&lt;/h2&gt;
+&lt;p&gt;We have pretty solid ground for preview deployments so let&apos;s wire them up on the frontend and see how things going on.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Pretty Opinionated Introduction to React Native for React Developers]]></title><description><![CDATA[Pretty Opinionated Introduction to React Native for React Developers Hooks They are the same. New React versions are tend to be adapted…]]></description><link>https://oguzhan.netlify.com/01-react-native-for-react/</link><guid isPermaLink="false">https://oguzhan.netlify.com/01-react-native-for-react/</guid><pubDate>Sun, 14 Mar 2021 21:12:03 GMT</pubDate><content:encoded>&lt;h2&gt;Pretty Opinionated Introduction to React Native for React Developers&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Hooks&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;They are the same. New React versions are tend to be adapted later on React Native so some bleeding edge React library features may not be available on the version of React Native you start.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;JSX tags are slightly different: View instead of div, Text instead of h1&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;This makes React Native more React than pure HTML because component names start with capital letter&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Gotchas: &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The order of Views determines z-indexes&lt;/li&gt;
+&lt;li&gt;It can’t render arbitrary strings. String needs to be wrapped in Text component&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Navigation &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Mobile has different UX than web. Instead of pages, there are screens and passing value from one screen to another is accomplished by props. I would suggest react-navigation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Styling&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Stylesheet API is way to go. If you’re familiar with styled-components, you can use them here.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Layout&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;React Native styling relies heavily on flex-box and flex-direction is column as oppose to the web.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Data Layer&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Redux, redux-saga, thunk, axios, fetch, etc. Most of the popular libraries with thousands of users work perfect on React Native&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Advanced&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Want to have more control so write/alter Native Modules in Java/Kotlin and Objective-C/Swift&lt;/li&gt;
+&lt;li&gt;React Native have most of the API available on the browser but some might differ. For example: Intl methods for parsing dates are missing. &lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item><item><title><![CDATA[Patching npm packages for good]]></title><description><![CDATA[Introduction In React Native development, there is a common scenario if you support react-native-web. Find a package that fits your use case…]]></description><link>https://oguzhan.netlify.com/patch/</link><guid isPermaLink="false">https://oguzhan.netlify.com/patch/</guid><pubDate>Thu, 17 Sep 2020 21:12:03 GMT</pubDate><content:encoded>&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;In React Native development, there is a common scenario if you support react-native-web.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Find a package that fits your use case completely&lt;/li&gt;
+&lt;li&gt;Install and use it&lt;/li&gt;
+&lt;li&gt;Crashes for web&lt;/li&gt;
+&lt;li&gt;The fix is one-liner on library&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There is two options in that case. You either create a PR with your fix or fork the library and mantain your local version. Both of them has their downsides. Your PR might not be reviewed for weeks and you would need that fix immediately. And it can be pretty overwhelming to fork repos and mantain your own version.&lt;/p&gt;
+&lt;p&gt;The solution is here: patch-package&lt;/p&gt;
+&lt;h3&gt;patch-package&lt;/h3&gt;
+&lt;p&gt;According to its documentation: &lt;a href=&quot;https://www.npmjs.com/package/patch-package&quot;&gt;patch-package&lt;/a&gt; lets app authors instantly make and keep fixes to npm dependencies. It&apos;s a vital band-aid for those of us living on the bleeding edge.&lt;/p&gt;
+&lt;h3&gt;How does it work&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Go find the library that you&apos;d like to update in &lt;code class=&quot;language-text&quot;&gt;node_modules&lt;/code&gt; folder.&lt;/li&gt;
+&lt;li&gt;Make your changes&lt;/li&gt;
+&lt;li&gt;Run &lt;code class=&quot;language-text&quot;&gt;npx patch-package package-name&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run &lt;code class=&quot;language-text&quot;&gt;yarn install patch-package -D&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add &lt;code class=&quot;language-text&quot;&gt;&amp;quot;postinstall&amp;quot;: &amp;quot;patch-package&amp;quot;&lt;/code&gt; to your &lt;code class=&quot;language-text&quot;&gt;scripts&lt;/code&gt; key in &lt;code class=&quot;language-text&quot;&gt;package.json&lt;/code&gt; file&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Step 4 and Step5 guarantee that your &lt;code class=&quot;language-text&quot;&gt;node_modules&lt;/code&gt; will be overwritten by your patch each time you &lt;code class=&quot;language-text&quot;&gt;yarn&lt;/code&gt;.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[VSCode and TSLint Setup]]></title><description><![CDATA[TLDR; TSLint will hopefully be deprecated next year (2021). Till then it is the best linter option for Typescript project and VSCode should…]]></description><link>https://oguzhan.netlify.com/ts-lint/</link><guid isPermaLink="false">https://oguzhan.netlify.com/ts-lint/</guid><pubDate>Sat, 11 Jul 2020 21:12:03 GMT</pubDate><content:encoded>&lt;h2&gt;TLDR;&lt;/h2&gt;
 &lt;p&gt;TSLint will hopefully be deprecated next year (2021). Till then it is the best linter option for Typescript project and VSCode should work with it properly&lt;/p&gt;
 &lt;h3&gt;Example TSLint Rules&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;json&quot;&gt;&lt;pre class=&quot;language-json&quot;&gt;&lt;code class=&quot;language-json&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
@@ -237,7 +467,7 @@ The golden rule of…]]></description><link>https://oguzhan.netlify.com/git-note
 git rebase -i master
 The golden rule of git rebase is to never use it on public branches.
 So, before you run git rebase, always ask yourself, “Is anyone else looking at this branch?” If the answer is yes, take your hands off the keyboard and start thinking about a non-destructive way to make your changes (e.g., the git revert command)
-gitk git bisect&lt;/p&gt;
+gitkgit bisect&lt;/p&gt;
 &lt;p&gt;.gitignore
 Git sees every file in your working copy as one of three things.&lt;/p&gt;
 &lt;ol&gt;
@@ -291,6 +521,8 @@ git log --author=Oguzhan
 
 # Check commit with message
 git show --color --pretty=format:%b c2b88ed806fb5728a376bddab0c0e6d13d1ee15a&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;List all the commit from a specific commit on without commit hash&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;git log --pretty=oneline  commit-hash..HEAD --format=&amp;quot;$ad- %s [%an]&amp;quot;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h3&gt;References&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https://www.atlassian.com/git/tutorials/merging-vs-rebasing&quot;&gt;https://www.atlassian.com/git/tutorials/merging-vs-rebasing&lt;/a&gt;&lt;/li&gt;

@@ -4,10 +4,9 @@ date: "2021-05-05T21:12:03.284Z"
 description: Let's bring convenient preview PR deployments to iOS side of React Native Projects (Android is doable too)
 tags:
   [
-    "storybook",
-    "react",
+    "github",
     "reactnative",
-    "frontend",
+    "github-actions",
     "monorepo",
     "yarn",
     "workspaces",
