@@ -35,8 +35,6 @@ After getting my hands dirty with API, I went ahead and integrate the endpoint o
 
 ## Frontend Code
 
-I decided to build a dedicated developer screen which contains all available updates.
-
 I decided to build a dedicated developer screen that contains all available updates. I’m using react-router in my project but feel free to pick any navigation solutions of your choice. 
 Here is my code for inspiration
 
