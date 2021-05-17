@@ -1,5 +1,5 @@
 ---
-title: Preview PR Deployments for React Native Projects Part 2
+title: Preview PR Deployments for React Native Projects - Part 2
 date: "2021-15-05T21:12:03.284Z"
 description: Time to complete the quest on the front end 
 tags:
@@ -12,6 +12,7 @@ tags:
     "workspaces",
   ]
 ---
+
 *Note: This is a living document. I can/will alter/improve the content*
 
 # Application side
