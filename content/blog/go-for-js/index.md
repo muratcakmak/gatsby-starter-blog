@@ -2,6 +2,12 @@
 title: WIP- Go for Javascript Developers
 date: "2019-03-12T21:12:03.284Z"
 description: Get your hands dirty with Golang
+tags:
+  [
+    "go",
+    "golang",
+    "javascript",
+  ]
 ---
 
 ## Go

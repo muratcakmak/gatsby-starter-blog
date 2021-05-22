@@ -2,6 +2,12 @@
 title: React Native Cheatsheet
 date: "2019-03-10T21:12:03.284Z"
 description: Frequently Running Issues in React Native
+tags:
+  [
+    "react-native",
+    "reactnative",
+    "cheatsheet",
+  ]
 ---
 
 ## React Native
