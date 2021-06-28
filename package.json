@@ -29,7 +29,7 @@
     "gatsby-transformer-sharp": "^2.1.16",
     "global": "^4.3.2",
     "prism-solarized-dark": "^1.0.1",
-    "prismjs": "^1.15.0",
+    "prismjs": "^1.24.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-feather": "^2.0.9",
