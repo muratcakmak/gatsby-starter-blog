@@ -1,6 +1,6 @@
 ---
 title: Preview PR Deployments for React Native Projects - Part 2
-date: "2021-15-05T21:12:03.284Z"
+date: "2021-05-15T21:12:03.284Z"
 description: Time to complete the quest on the front end 
 tags:
   [
