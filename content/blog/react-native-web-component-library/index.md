@@ -13,8 +13,6 @@ tags:
   ]
 ---
 
-## How to create a component library with React Native for Web
-
 Creating a component library from scratch is an exciting endeavor. It's more straightforward if you use web-only technologies such as React, Web Components, or Svelte. It becomes a tad challenging if I decided to give it a go-to React Native for Web.
 
 React Native for Web is a relatively young technology that powers Twitter web clients. It has React Native primitives translated into DOM elements. I find it cleaner and more concise to use `View` instead of `<div>`. The latter is a random abbreviation that is created way before Javascript and interactive websites.
