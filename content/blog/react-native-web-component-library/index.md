@@ -25,49 +25,49 @@ Without further ado, let's kick it off!
 ### Scaffold the project
 
 Create a file using zsh (which is the default on MacOS):
-```
+```sh
 take component-library
 ```
 
 Or when using bash
-```
+```sh
 mkdir component-library && cd component-library
 ```
 
 I will be using yarn to create the project. Feel free to use npm.
 
-```
+```sh
 yarn init -y
 ```
 
 First, install Typescript:
 
-```
+```sh
 yarn add -D typescript
 ```
 
 Create an entry point.
 
-```
+```sh
  mkdir src && touch src/index.ts
 ```
 
 Then add the following:
 
-```
-yarn add react react-dom  react-native-web
+```sh
+yarn add react react-dom react-native-web
 ```
 
 I will be using `parcel` to bundle the app. I am not going to go into the details of bundling. You can find a quick introduction if you are looking for further resources at the end of the article.
 
 
-```
+```sh
 yarn add -D parcel
 ```
 
 Initialize git
 
-```
+```sh
 git init
 echo "/node_modules" >> .gitignore
 git add .
@@ -76,12 +76,12 @@ git commit -m "Initial commit"
 
 I must add types since I use typescript. These dependencies have to be `devDependencies`.
 
-```
+```sh
 yarn add -D @types/react @types/react-native
 ```
 
 I must create tsconfig for React project
-```
+```sh
 npx tsconfig.json
 ```
 
@@ -89,7 +89,7 @@ Let's create our first component
 
 
 
-```
+```tsx
 // src/Header.tsx
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
@@ -124,7 +124,7 @@ export const Header: React.FC<HeaderProps> = ({
 
 Don't forget to update `index.ts` too.
 
-```
+```ts
 // src/index.ts
 import { Header } from './Header';
 
@@ -142,7 +142,7 @@ Build paths have to be added.
 2. main: generated output for JS bundle
 3. module: ESModule target
 
-```
+```json
 "source": "src/index.ts",
 "main": "dist/main.js",
 "module": "dist/module.js",
@@ -151,7 +151,7 @@ Build paths have to be added.
 
 After that, add the following scripts to your package.json file
 
-```
+```json
 "scripts": {
 	"build": "parcel build"
 },
@@ -164,7 +164,7 @@ That's fine. We have a solid Parcel setup for now. We're not able to test it tho
 ### Storybook
 
 
-```
+```sh
 npx sb init
 ```
 
@@ -173,7 +173,7 @@ It will take some time to add storybook
 
 Storybook doesn't have any idea about react-native-web so we have to instruct it strictly.
 
-```
+```js
 // .storybook/webpack.config.js
 module.exports = async ({ config }) => {
   config.resolve.alias = {
@@ -189,7 +189,7 @@ Storybook adds bunch of files and code. We shall remove most of them to free up 
 
 
 Create Header.stories.tsx and add the content below:
-```
+```tsx
 import React from "react";
 import { ComponentMeta } from "@storybook/react";
 
@@ -205,7 +205,7 @@ export const Default = () => <Header></Header>;
 
 Run
 
-```
+```sh
 yarn storybook
 ```
 
