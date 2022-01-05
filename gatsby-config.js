@@ -124,13 +124,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
+        name: `Oguzhan Cakmak (OMC)`,
         short_name: `GatsbyJS`,
         start_url: `/`,
         background_color: `#000000`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `static/favicon-32x32.png`,
       },
     },
     `gatsby-plugin-offline`,
