@@ -38,10 +38,12 @@ function Bio() {
               }}
             />
             <p>
-              Written by <strong>{author}</strong> who lives and works in San
-              Francisco and remote building mobile applications, web applications, and backend. Follow him on{` `}
+              <strong>{author}</strong> , starting his software career in Istanbul and advancing through roles in 
+              San Francisco at Uber and Hims&Hers, now thrives on remote work from Kaş, Antalya, balancing 
+              his passion for technology with interests in diving, hiking, and exploring diverse content on podcasts.
+              Follow him on{` `}
               <a href={`https://twitter.com/${social.twitter}`}>Twitter</a>
-              {` `}or{` `}
+              {` `}and{` `}
               <a href={`https://instagram.com/${social.instagram}`}>
                 Instagram
               </a>
