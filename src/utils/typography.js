@@ -13,7 +13,7 @@ delete Wordpress2016.googleFonts
 
 const typography = new Typography({
   ...Wordpress2016,
-  bodyFontFamily: ["Georgia", "serif"],
+  bodyFontFamily: ["Newsreader","Georgia", "serif"],
 })
 
 // Hot reload typography in development.

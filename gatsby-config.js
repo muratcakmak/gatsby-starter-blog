@@ -11,6 +11,21 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: 'gatsby-plugin-prefetch-google-fonts',
+      options: {
+        fonts: [
+          {
+            family: 'Newsreader',
+            variants: ['400', '700'],
+          },
+          {
+            family: 'Open Sans',
+            variants: ['400', '700'],
+          },
+        ],
+      },
+    },
+    {
       resolve: `gatsby-plugin-webmention`,
       options: {
         username: "www.omc345.com", // webmention.io username
