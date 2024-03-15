@@ -1,52 +1,41 @@
 html {
-  background-color: black;
+  background-color: #fdf6e3; /* Light beige background for a paper-like feel */
 }
 h1 {
-  color: #ff00ff !important;
+  color: #d33682; /* A softer magenta for headings */
 }
 body {
-  color: white !important;
+  color: #586e75; /* Dark gray for body text, improving readability */
 }
 a {
-  color: #20cf9b;
+  color: #2aa198; /* Teal for links, offering a pleasant contrast */
 }
 
 .gatsby-highlight-code-line {
-  background-color: #feb;
+  background-color: #eee8d5; /* Lighter beige for highlighted code lines */
   display: block;
   margin-right: -1em;
   margin-left: -1em;
   padding-right: 1em;
   padding-left: 0.75em;
-  border-left: 0.25em solid #f99;
+  border-left: 0.25em solid #cb4b16; /* Warm orange for the border */
 }
 
-/**
- * Add back the container background-color, border-radius, padding, margin
- * and overflow that we removed from <pre>.
- */
 .gatsby-highlight {
-  background-color: #3d3b36;
+  background-color: #eee8d5; /* Matching the highlight lines with a light beige */
   border-radius: 0.3em;
   margin: 0.5em 0;
   padding: 1em;
   overflow: auto;
 }
 
-/**
- * Remove the default PrismJS theme background-color, border-radius, margin,
- * padding and overflow.
- * 1. Make the element just wide enough to fit its content.
- * 2. Always fill the visible space in .gatsby-highlight.
- * 3. Adjust the position of the line numbers
- */
 .gatsby-highlight pre[class*="language-"] {
   background-color: transparent;
   margin: 0;
   padding: 0;
   overflow: initial;
-  float: left; /* 1 */
-  min-width: 100%; /* 2 */
+  float: left; 
+  min-width: 100%;
 }
 
 .webmentions {
