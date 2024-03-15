@@ -38,9 +38,9 @@ function Bio() {
               }}
             />
             <p>
-              <strong>{author}</strong> , starting his software career in Istanbul and advancing through roles in 
-              San Francisco at Uber and Hims&Hers, now thrives on remote work from Kaş, Antalya, balancing 
-              his passion for technology with interests in diving, hiking, and exploring diverse content on podcasts.
+              <strong>{author}</strong>, starting his software career in Istanbul and advancing through roles in 
+              San Francisco at Uber and Hims&Hers, now does remote work from Kaş, Antalya, balancing 
+              his passion for technology with interests in kitesurfing, diving, hiking, and exploring diverse content on podcasts.
               Follow him on{` `}
               <a href={`https://twitter.com/${social.twitter}`}>Twitter</a>
               {` `}and{` `}
