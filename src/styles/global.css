@@ -2,7 +2,7 @@ html {
   background-color: #fdf6e3; /* Light beige background for a paper-like feel */
 }
 h1 {
-  color: #d33682; /* A softer magenta for headings */
+  /* color: #d33682; A softer magenta for headings */
 }
 body {
   color: #586e75; /* Dark gray for body text, improving readability */
