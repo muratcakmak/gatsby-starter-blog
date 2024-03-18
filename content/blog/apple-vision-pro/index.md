@@ -25,7 +25,7 @@ Watching environments and 3D movies in the Disney+ app is a lot of fun. I think 
 
 Did I mention the resolution is unbelievable? Text is so crisp, it's like reading ink on paper. I can spend hours coding or writing in this thing without any more eyestrain than I'd get from my regular monitors. In fact, I'd argue it's easier on the eyes, since you can position windows wherever is most comfortable for your posture and gaze.
 
-Working inside the Vision Pro is a revelation. I can surround myself with an infinite array of screens, all hovering in space, ready to be called upon with a glance or a gesture. I can collaborate with colleagues as if we're in the same room, huddled around a virtual whiteboard, tossing ideas back and forth. The shared spatial anchors make it feel like we're manipulating the same objects, even though we may be miles apart.
+Working inside the Vision Pro is a revelation. I can surround myself with an infinite array of screens, all hovering in space, ready to be called upon with a glance or a gesture. I can collaborate with colleagues as if we're in the same room, huddled around a virtual whiteboard, tossing ideas back and forth. The shared spatial anchors make it feel like we're manipulating the same objects, even though we may be miles apart. 
 
 
 But the device is very heavy, the external battery doesn't allow for walking or physical activity. After an hour or so, the weight starts to bear down on your forehead and cheeks, leaving angry red marks. And forget about wearing this thing on a hike or a jog - the headset bounces around and the battery pack thumps awkwardly against your hip.
@@ -33,8 +33,6 @@ There is a lack of controllers. Apple has created this device for stationary exp
 
 
 Traveling on a plane is incredible. It's like flying with an IMAX theater next to you. When you pair this device with AirPods, you have a portable cinema.
-
-It's also great for working. I didn't experience any latency when connected via WiFi. The only bottleneck here is the weight. The device is heavy and the external battery is not very ergonomic, dictating that the user sit.
 
 So is the Vision Pro a groundbreaking spatial computer that will redefine personal computing? Or an expensive toy that isn't quite ready for primetime? The answer, I think, is a bit of both.
 
