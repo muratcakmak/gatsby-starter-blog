@@ -23,7 +23,7 @@ The device is a nice addition to the Apple ecosystem. Text copied from your iPho
 
 The built-in speakers and spatial audio are amazing. After acquiring Beats, Apple showed how well they do this with the AirPods they produced. It doesn't disappoint here either. For example, if you put a window on the right, the sound comes from the right. It's like the sound source is physically there. When you look directly at the window playing music, the sound comes straight from the front.
 
-Watching environments and 3D movies in the Disney+ app is a lot of fun. I think it offers the best cinema experience in the world. Last summer I went to see Barbie at Antalya Terracity and we left the theater without being able to see the pink color.
+Watching environments and 3D movies in the Disney+ app is a lot of fun. I think it offers the best cinema experience in the world. Last summer I went to see Barbie at theater and we left the theater without being able to see the pink color and it wasn't good.
 
 Did I mention the resolution is unbelievable? Text is so crisp, it's like reading ink on paper. I can spend hours coding or writing in this thing without any more eyestrain than I'd get from my regular monitors. In fact, I'd argue it's easier on the eyes, since you can position windows wherever is most comfortable for your posture and gaze.
 
