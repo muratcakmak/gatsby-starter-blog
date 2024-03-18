@@ -11,6 +11,8 @@ Wearing the Vision Pro feels like stepping into the future, but with one foot st
 
 From the initial setup to using your gaze as a mouse, everything is instinctive. Grabbing and sliding windows feels as natural as rearranging papers on a real desk. Apple's knack for intuitive interfaces shines through. A 10-year-old could pick this up and start playing with virtual dinosaurs. A 60-year-old could don the headset and start sorting through their photo memories, all with minimal instruction.
 
+<blockquote class="twitter-tweet" data-media-max-width="560"><p lang="tr" dir="ltr">Vision Pro ile ilk yemeksepeti siparişimi vermek üzereyim. iOS appleri bayağı iyi çalışıyor ve el ile kontrol olayı çözülmüş durumda. <br><br>Human Computer Interaction konusunda Apple&#39;ın eline su dökmek mümkün değil. <a href="https://t.co/o30FaLkATU">pic.twitter.com/o30FaLkATU</a></p>&mdash; Oguzhan Cakmak (OMC) (@omc345) <a href="https://twitter.com/omc345/status/1757401167900925960?ref_src=twsrc%5Etfw">February 13, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 The resolution is mind-blowing. Text is razor-sharp. Photos and videos pop with vibrant color and detail. It's like staring at the world's best smartphone screen, except it's wrapped around your entire field of view. The 23 million pixels crammed into the dual Micro-OLED displays make even 4K TVs seem primitive by comparison.
 
 But there's a catch. Passthrough - seeing the real world through the VR device - is better than the competition, but I'm not a fan. Viewing the world we see so vividly with our own eyes at a mere 720p resolution is like a downgrade. Sure, it gets the job done, but where's the magic? I guess this feature is there to prevent motion sickness. My biggest problem with the Meta Quest was the nausea. The Vision Pro feels much more open by comparison. But when you put it on, it still feels like you're submerged in a digital fishbowl. When you take it off, it's an upgrade back to reality.
@@ -27,10 +29,13 @@ Did I mention the resolution is unbelievable? Text is so crisp, it's like readin
 
 Working inside the Vision Pro is a revelation. I can surround myself with an infinite array of screens, all hovering in space, ready to be called upon with a glance or a gesture. I can collaborate with colleagues as if we're in the same room, huddled around a virtual whiteboard, tossing ideas back and forth. The shared spatial anchors make it feel like we're manipulating the same objects, even though we may be miles apart. 
 
+<blockquote class="twitter-tweet" data-media-max-width="560"><p lang="tr" dir="ltr">Sonunda Apple Vision Pro’da development yapabildim. M cipli MacBook’u AVP’ye baglamak cok kolay. Ancak Xcode’a baglanti icin bi kac duzenleme yapmak gerekiyor.<br><br>AVP’de development mode’unu acip, Xcode uzerinde Apple Developer hesabiniza AVP’yi ekledikten sonra Xcode’dan build… <a href="https://t.co/6zKIpXg3yQ">pic.twitter.com/6zKIpXg3yQ</a></p>&mdash; Oguzhan Cakmak (OMC) (@omc345) <a href="https://twitter.com/omc345/status/1759191945895694577?ref_src=twsrc%5Etfw">February 18, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 
 But the device is very heavy, the external battery doesn't allow for walking or physical activity. After an hour or so, the weight starts to bear down on your forehead and cheeks, leaving angry red marks. And forget about wearing this thing on a hike or a jog - the headset bounces around and the battery pack thumps awkwardly against your hip.
 There is a lack of controllers. Apple has created this device for stationary experiences and it works well in this area.
 
+<blockquote class="twitter-tweet" data-media-max-width="560"><p lang="tr" dir="ltr">Dun Apple Vision Pro’yu ilk defa ucakta denedim. <br>- Ucaklardaki hic bir eglence sistemi bununla yarisamaz<br>- Kafanizda dunyanin en iyi sinema sistemini tasiyorsunuz<br>- Gurultu engelleyici kulakliginiz varsa baska dunyaya isinlaniyorsunuz<br>- Ortamdan bu kadar soyutlanmak ne kadar… <a href="https://t.co/ZZ1hsnC9GS">pic.twitter.com/ZZ1hsnC9GS</a></p>&mdash; Oguzhan Cakmak (OMC) (@omc345) <a href="https://twitter.com/omc345/status/1759826959738028521?ref_src=twsrc%5Etfw">February 20, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Traveling on a plane is incredible. It's like flying with an IMAX theater next to you. When you pair this device with AirPods, you have a portable cinema.
 
