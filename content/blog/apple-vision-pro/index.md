@@ -1,11 +1,9 @@
 ---
-title: title: Impressions of the Vision Pro from a Software Engineer's Perspective
+title: Impressions of the Vision Pro from a Software Engineer's Perspective
 date: "2024-03-16T09:30:00.000Z"
 description: A hands-on review of the Apple Vision Pro mixed reality headset from a developer's point of view
 tags: [ "Apple", "Vision Pro", "mixed reality","virtual reality","augmented reality","spatial computing"]
 ---
-
-## Impressions of the Vision Pro from a Software Engineer's Perspective
 
 You're thinking the Vision Pro is revolutionary, like the iPhone was. But you're wrong. At least not right away. This isn't a device for everyone. They're targeting professionals.
 
@@ -29,11 +27,10 @@ Did I mention the resolution is unbelievable? Text is so crisp, it's like readin
 
 Working inside the Vision Pro is a revelation. I can surround myself with an infinite array of screens, all hovering in space, ready to be called upon with a glance or a gesture. I can collaborate with colleagues as if we're in the same room, huddled around a virtual whiteboard, tossing ideas back and forth. The shared spatial anchors make it feel like we're manipulating the same objects, even though we may be miles apart.
 
+
 But the device is very heavy, the external battery doesn't allow for walking or physical activity. After an hour or so, the weight starts to bear down on your forehead and cheeks, leaving angry red marks. And forget about wearing this thing on a hike or a jog - the headset bounces around and the battery pack thumps awkwardly against your hip.
 There is a lack of controllers. Apple has created this device for stationary experiences and it works well in this area.
 
-<blockquote class="twitter-tweet" data-media-max-width="560">
-&mdash; Oguzhan Cakmak (OMC) (@omc345) <a href="https://twitter.com/omc345/status/1759826959738028521?ref_src=twsrc%5Etfw">February 20, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 Traveling on a plane is incredible. It's like flying with an IMAX theater next to you. When you pair this device with AirPods, you have a portable cinema.
 

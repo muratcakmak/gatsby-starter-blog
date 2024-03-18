@@ -3,12 +3,15 @@ html {
 }
 h1 {
   /* color: #d33682; A softer magenta for headings */
+  color: #a1692a; /* Teal for links, offering a pleasant contrast */
 }
 body {
-  color: #586e75; /* Dark gray for body text, improving readability */
+  
+  color: #586e75; /* Dark gray for body text, 
+  improving readability */
 }
 a {
-  color: #2aa198; /* Teal for links, offering a pleasant contrast */
+  color: #a1692a; /* Teal for links, offering a pleasant contrast */
 }
 
 .gatsby-highlight-code-line {
@@ -86,4 +89,16 @@ a {
   width: 48px;
   border-radius: 50%;
   object-fit: cover;
+}
+
+h1 {
+  font-family: "Newsreader", Montserrat, sans-serif;
+}
+
+h2 {
+  font-family: "Newsreader", Montserrat, sans-serif;
+}
+
+h3 {
+  font-family: "Newsreader", Montserrat, sans-serif;
 }
