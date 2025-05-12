@@ -1,6 +1,6 @@
 ---
 title: "Mastering Cursor Rules in React Projects: A Developer's Guide"
-date: "2024-03-16T09:30:00.000Z"
+date: "2025-05-12"
 description: "Learn how to configure and structure advanced Cursor AI rules for efficient, context-aware React development workflows."
 tags: ["Cursor", "React", "AI coding assistants", "developer tools", "frontend development", "project structure"]
 ---
