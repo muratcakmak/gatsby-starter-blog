@@ -1,11 +1,11 @@
 ---
 title: "Cursor for Frontend Engineers"
 date: "2025-05-27"
-description: "Learn how to configure and structure advanced Cursor AI rules for efficient, context-aware React development workflows."
-tags: ["Cursor", "React", "AI coding assistants", "developer tools", "frontend development", "project structure"]
+description: "Master Cursor IDE for React development with advanced AI rules, context-aware coding, and efficient project management."
+tags: ["Cursor IDE", "AI coding assistants", "React development", "frontend engineering", "developer tools", "project management"]
 ---
 
-# Cursor IDE: The AI-Native Code Editor That's Actually Worth Your Time
+> Cursor IDE: The AI-Native Code Editor That's Actually Worth Your Time
 
 After spending years bouncing between various IDEs and AI coding assistants, I've finally found something that doesn't feel like a gimmick: Cursor IDE. As someone who's been 10 years in their software engineering career, I've seen my fair share of "revolutionary" developer tools. Most fall short. Cursor doesn't.
 
